@@ -246,7 +246,11 @@
     <script src="https://mutationmedia.net/FOXEWEDDING/js/placeholders.min.js"></script>
     <script src="https://mutationmedia.net/FOXEWEDDING/js/instafeed.min.js"></script>
     <script>
-      // Obter a data atual
+     
+
+      // Atualize o contador a cada segundo
+      var countdownInterval = setInterval(function () {
+         // Obter a data atual
       var currentDate = new Date();
 
       // Obter o mês atual
@@ -270,11 +274,7 @@
         targetDate = new Date(nextYear, nextMonth, day, 0, 0, 0);
       }
 
-
-      // Atualize o contador a cada segundo
-      var countdownInterval = setInterval(function () {
-        var currentDate = new Date().getTime();
-        var timeLeft = targetDate - currentDate;
+        var timeLeft = targetDate - currentDate.getTime();
 
         if (timeLeft <= 0) {
           clearInterval(countdownInterval); // Para o contador quando a data-alvo for atingida
